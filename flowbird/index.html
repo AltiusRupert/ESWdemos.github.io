@@ -1,45 +1,54 @@
 <html>
-    <head>
-</head> 
-    <body>
-    	<style type='text/css'>
-.embeddedServiceHelpButton .helpButton .uiButton {
-background-color: #005290;
-font-family: "Arial", sans-serif;
-}
-.embeddedServiceHelpButton .helpButton .uiButton:focus {
-outline: 1px solid #005290;
-}
-</style>
+
+<head>
+</head>
+
+<body>
+	<style type='text/css'>
+		.embeddedServiceHelpButton .helpButton .uiButton {
+			background-color: #005290;
+			font-family: "Arial", sans-serif;
+		}
+
+		.embeddedServiceHelpButton .helpButton .uiButton:focus {
+			outline: 1px solid #005290;
+		}
+	</style>
 
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
-<script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		// Required if you want labels in a language that’s different from your user’s context.
-		//embedded_svc.menu.settings.language = ''; //For example, enter 'en' or 'en-US'
+	<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
+	<script type='text/javascript'>
 
-		embedded_svc.menu.init(
-			'https://flowbird--devsprint2.my.salesforce.com',
-			'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
-			gslbBaseURL,
-			'00D1w0000008cGH',
-			'Yellowbrick_FR'
-		);
-	};
+		var initESW = function (gslbBaseURL) {
+			// Required if you want labels in a language that’s different from your user’s context.
+			//embedded_svc.menu.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-	if (!window.embedded_svc || !window.embedded_svc.menu) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://flowbird--devsprint2.my.salesforce.com/embeddedservice/menu/fab.min.js');
-		s.onload = function() {
-			initESW(null);
+			var newOrder = ["Facebook_Flowbird_FR", "RBW_Chat"];
+         		embedded_svc.menu.reorder(["Facebook_Flowbird_FR"]);
+
+			embedded_svc.menu.init(
+				'https://flowbird--devsprint2.my.salesforce.com',
+				'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',¨
+				gslbBaseURL,
+				'00D1w0000008cGH',
+				'Yellowbrick_FR'
+			);
 		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
-</script> <div id="salesforce-login"></div>
-	
-	
-	</body>
+
+		if (!window.embedded_svc || !window.embedded_svc.menu) {
+			var s = document.createElement('script');
+			s.setAttribute('src', 'https://flowbird--devsprint2.my.salesforce.com/embeddedservice/menu/fab.min.js');
+			s.onload = function () {
+				initESW(null);
+			};
+			document.body.appendChild(s);
+		} else {
+			initESW('https://service.force.com');
+		}
+	</script>
+	<div id="salesforce-login"></div>
+
+
+</body>
+
 </html>
