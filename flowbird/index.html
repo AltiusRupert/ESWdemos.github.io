@@ -36,9 +36,6 @@
 			function reorderWithTimeOut() {
 				setTimeout(function(){  embedded_svc.menu.reorder(["RBW_Chat"]); }, 4000);	
 			}
-		</script>
-
-		<script type='text/javascript'>
 			
 			<!-- Channel Menu initialization
 			var initESW = function (gslbBaseURL) {
@@ -57,6 +54,22 @@
 					'00D1w0000008cGH',
 					'Yellowbrick_FR'
 				);
+				
+				// Load a JavaScript File
+				// Specify your resources using the static resource name, not the file name itself. For example, if you upload CustomEvent.js and give it the name CustomEvent, enter CustomEvent.
+				// https://developer.salesforce.com/docs/atlas.en-us.snapins_web_dev.meta/snapins_web_dev/snapins_web_set_custom_events.htm
+				//embedded_svc.settings.externalScripts = ["...", “...”]
+
+				// Load a CSS File
+				// Specify your resources using the static resource name, not the file name itself. For example, if you upload CustomEvent.css and give it the name CustomEventCSS, enter CustomEventCSS.
+				// https://developer.salesforce.com/docs/atlas.en-us.snapins_web_dev.meta/snapins_web_dev/snapins_web_set_custom_events.htm
+				//embedded_svc.settings.externalStyles = ["...", “...”]
+
+				// Create Embedded Static Resources
+				// https://help.salesforce.com/articleView?id=sf.embedded_static_resources.htm&type=5
+				// Channel Menu Static Resource Files
+				// https://help.salesforce.com/articleView?id=sf.embedded_menu_static_examples.htm&type=5
+
 			};
 			
 			<!-- Reorder channel -->
