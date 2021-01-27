@@ -18,28 +18,32 @@
         background:"blue");
 }
 </style>
-<button onclick="reorder()">re order to one CTA </button>	
-<button onclick="reorderWithTimeOut()">re order with time out</button>	 
-<a href ='javascript:;' onclick='reorderToGoogle1()'>re order to google1 in same page</a>
+<button onclick="reorder_ChatAlone()"    >re order to : Chat alone </button>	
+<button onclick="reorder_FacebookAlone()">re order to : Facebook alone </button>	
+<button onclick="reorder_ChatFacebook()" >re order to : Chat, Facebook </button>	
+<button onclick="reorder_FacebookChat()" >re order to : Facebook, Chat </button>	
+
+<button onclick="reorderWithTimeOut()">re order to Chat, with time out</button>	 
+<a href ='javascript:;' onclick='reorder_FacebookChat()'>re order to Facebook, Chat in same page</a>
 <br/>
-<a href ='#bottom' onclick='reorderToGoogle1()'>re order to bottom</a>	 	
-	<a href ='#top' onclick='reorderToGoogle()'>re order to top</a>	 	
+<a href ='#bottom' onclick='reorder_FacebookChat()'>re order to Facebook, Chat - bottom</a>	 	
+<a href ='#top'    onclick='reorder_FacebookAlone()'>re order to : Facebook alone - top</a>	 	
 
 <script>
-function reorder() {
-  embedded_svc.menu.reorder(["Google"]);
+function reorder_ChatAlone() {
+  embedded_svc.menu.reorder(["RBW_Chat"]);
 }
-function reorderMultiple() {
-  embedded_svc.menu.reorder(["Google1","CallMeMaybe"]);
+function reorder_FacebookAlone() {
+  embedded_svc.menu.reorder(["Facebook_Flowbird_FR"]);
 }
-function reorderToGoogle() {
-  embedded_svc.menu.reorder(["Google"]);
+function reorder_ChatFacebook() {
+  embedded_svc.menu.reorder(["RBW_Chat","Facebook_Flowbird_FR"]);
 }
-function reorderToGoogle1() {
- embedded_svc.menu.reorder(["Google1"]);
+function reorder_FacebookChat() {
+  embedded_svc.menu.reorder(["Facebook_Flowbird_FR", "RBW_Chat"]);
 }
 function reorderWithTimeOut() {
-setTimeout(function(){  embedded_svc.menu.reorder(["Google1","CallMeMaybe"]); }, 4000);	
+setTimeout(function(){  embedded_svc.menu.reorder(["RBW_Chat"]); }, 4000);	
 }
 </script>
 
