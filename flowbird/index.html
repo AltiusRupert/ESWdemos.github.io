@@ -1,22 +1,51 @@
+<!DOCTYPE HTML>
 <html>
-
-<head>
-</head>
-
+   <head>
+   <title>DEFAULT PAGE</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, 
+                  imum-scale=1, maximum-scale=1, user-scalable=0"> 
+   </head> 
 <body>
-	<style type='text/css'>
-		.embeddedServiceHelpButton .helpButton .uiButton {
-			background-color: #005290;
-			font-family: "Arial", sans-serif;
-		}
+<style type='text/css'>
+.div1{
+	height:2000px;
+	width:100%;
+        background:"red";
+}
+.div2{
+	height:1000px;
+	width:100%;
+        background:"blue");
+}
+</style>
+<button onclick="reorder()">re order to one CTA </button>	
+<button onclick="reorderWithTimeOut()">re order with time out</button>	 
+<a href ='javascript:;' onclick='reorderToGoogle1()'>re order to google1 in same page</a>
+<br/>
+<a href ='#bottom' onclick='reorderToGoogle1()'>re order to bottom</a>	 	
+	<a href ='#top' onclick='reorderToGoogle()'>re order to top</a>	 	
 
-		.embeddedServiceHelpButton .helpButton .uiButton:focus {
-			outline: 1px solid #005290;
-		}
-	</style>
+<script>
+function reorder() {
+  embedded_svc.menu.reorder(["Google"]);
+}
+function reorderMultiple() {
+  embedded_svc.menu.reorder(["Google1","CallMeMaybe"]);
+}
+function reorderToGoogle() {
+  embedded_svc.menu.reorder(["Google"]);
+}
+function reorderToGoogle1() {
+ embedded_svc.menu.reorder(["Google1"]);
+}
+function reorderWithTimeOut() {
+setTimeout(function(){  embedded_svc.menu.reorder(["Google1","CallMeMaybe"]); }, 4000);	
+}
+</script>
 
 
-	<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
+
+	<!--<script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>-->
 	<script type='text/javascript'>
 
 		var initESW = function (gslbBaseURL) {
@@ -32,7 +61,6 @@
 				'00D1w0000008cGH',
 				'Yellowbrick_FR'
 			);
-         		embedded_svc.menu.reorder(["Facebook_Flowbird_FR", "RBW_Chat"]);
 		};
 
 		if (!window.embedded_svc || !window.embedded_svc.menu) {
@@ -46,7 +74,11 @@
 			initESW('https://service.force.com');
 		}
 	</script>
+	
+	
 	<div id="salesforce-login"></div>
+	<div class = "div1"><a name="top"   ></a></div>	
+	<div class = "div2"><a name="bottom"></a></div>	
 
 
 </body>
