@@ -34,7 +34,7 @@
 				embedded_svc.menu.reorder(["Facebook_Flowbird_FR", "RBW_Chat"]);
 			}
 			function reorderWithTimeOut() {
-			setTimeout(function(){  embedded_svc.menu.reorder(["RBW_Chat"]); }, 4000);	
+				setTimeout(function(){  embedded_svc.menu.reorder(["RBW_Chat"]); }, 4000);	
 			}
 		</script>
 
@@ -59,12 +59,10 @@
 			
 			<!-- Reorder channel -->
 			var reorderChannelMenu = function (domain) {
-				console.log('### in reorderChannelMenu() ...');
-				setTimeout(function() { reorder_FacebookChat(); }, 2000);
-				console.log('### ... reorderChannelMenu() done');
+				setTimeout(function() { reorder_FacebookChat(); }, 500);
 			}
 			
-			<!-- load and initialize ESW Embedded Service Web, reorder channel menu after 2s delay -->
+			<!-- load and initialize ESW Embedded Service Web, reorder channel menu  -->
 			if (!window.embedded_svc || !window.embedded_svc.menu) {
 				var s = document.createElement('script');
 				s.setAttribute('src', 'https://flowbird--devsprint2.my.salesforce.com/embeddedservice/menu/fab.min.js');
