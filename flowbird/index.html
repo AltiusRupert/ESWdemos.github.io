@@ -68,9 +68,12 @@
 				s.setAttribute('src', 'https://flowbird--devsprint2.my.salesforce.com/embeddedservice/menu/fab.min.js');
 				s.onload = function () {
 					initESW(null);
-					reorderChannelMenu('support.flowbird.fr');
 				};
 				document.body.appendChild(s);
+				
+				window.onload = function () {
+					reorderChannelMenu('support.flowbird.fr');
+				}
 			} else {
 				initESW('https://service.force.com');
 			}
