@@ -47,9 +47,8 @@
 				//embedded_svc.settings.extraPrechatFormDetails = {};
 				
 				<!-- debug channel menu reordering -->
-				embedded_svc.settings.displayHelpButton = true;
-				embedded_svc.menu.settings.devMode = true;
 				embedded_svc.settings.displayHelpButton = false;
+				embedded_svc.menu.settings.devMode = true;
 
 				embedded_svc.menu.init(
 					'https://flowbird--devsprint2.my.salesforce.com',
@@ -62,11 +61,15 @@
 			
 			<!-- Reorder channel -->
 			var reorderChannelMenu = function (domain) {
-				setTimeout(function() { reorder_FacebookChat(); }, 1000);
+				setTimeout(function() {
+					console.log('## Configured channels :');
+					console.log(embedded_svc.menu.menuConfig.configuredChannels);
+					embedded_svc.settings.displayHelpButton = true;
+					
+					reorder_FacebookChat();
+				}, 1000);
 				//reorder_FacebookChat();
 				
-				console.log('## Configured channels :');
-				console.log(embedded_svc.menu.menuConfig.configuredChannels);
 			}
 			
 			<!-- load and initialize ESW Embedded Service Web, reorder channel menu  -->
